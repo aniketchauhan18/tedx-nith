@@ -5,8 +5,8 @@ import { useState } from "react";
 import { useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { signOut } from "@/lib/auth-client";
-import { Button } from "./ui/button";
-import { LogOut } from "lucide-react";
+// import { Button } from "./ui/button";
+// import { LogOut } from "lucide-react";
 
 export default function Navbar() {
   const [toogleMenu, setToogleMenu] = useState<boolean>(false);
