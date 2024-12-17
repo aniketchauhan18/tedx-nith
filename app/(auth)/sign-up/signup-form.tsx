@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { signUp, useSession } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
+import SignInWithGoogle from "@/components/buttons/signin-with-google";
 
 export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
   const { data } = useSession();
@@ -69,20 +70,20 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
 
   const inputClasses: string = "shadow-none";
   return (
-    <div className="p-5 rounded-xl border bg-white">
-      <div className="text-center text-2xl md:text-3xl  my-3 font-semibold">
+    <div className="p-5 rounded-xl bg-white">
+      <div className=" text-2xl md:text-3xl  my-3 font-semibold">
         <h2>Create your account</h2>
-        <p className="text-sm text-neutral-400 font-light">
-          or{" "}
+        <p className="text-sm text-neutral-400 font-extralight">
+          Already have an account?{" "}
           <Link
             href={
               redirectURL
                 ? `/sign-in?redirectURL=${encodeURIComponent(redirectURL)}`
                 : "/sign-in"
             }
-            className="text-thunderbird-700 hover:text-thunderbird-600 transition ease-in-out"
+            className="text-thunderbird-700 hover:text-thunderbird-600 transition ease-in-out hover:underline-offset hover:underline"
           >
-            sign in to your existing account
+            Sign in
           </Link>
         </p>
       </div>
@@ -262,11 +263,12 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
             )}
           />
         </div>
-        {/* <div className="flex items-center gap-3 w-full">
+        <div className="flex items-center gap-3 w-full">
           <div className="border-b border-neutral-300 flex-1 block"></div>
           <p className="text-neutral-600 font-medium text-xs">OR</p>
           <div className="border-b border-neutral-300 flex-1 block"></div>
-        </div> */}
+        </div>
+        <SignInWithGoogle redirectURL={redirectURL} />
       </form>
     </div>
   );

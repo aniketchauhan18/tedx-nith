@@ -3,8 +3,9 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { useSession } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { signOut } from "@/lib/auth-client";
+import clsx from "clsx";
 // import { Button } from "./ui/button";
 // import { LogOut } from "lucide-react";
 
@@ -12,17 +13,38 @@ export default function Navbar() {
   const [toogleMenu, setToogleMenu] = useState<boolean>(false);
   const session = useSession();
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleToogleMenu = () => {
     setToogleMenu((prev) => !prev);
   };
 
   const linkClasses: string =
-    "px-5 transition-colors text-white hover:text-white cursor-pointer";
+    "mx-2 transition-colors text-white hover:text-white cursor-pointer ";
   const hamburgerMenuLinkClasses: string =
     "p-4 text-lg font-medium border-b last:border-none border-border/40 block";
+
+  const navlinks = [
+    // {
+    //   name: "About",
+    //   link: "/about"
+    // },
+    {
+      name: "Sponsors",
+      link: "/sponsors",
+    },
+    {
+      name: "Team",
+      link: "/team",
+    },
+    {
+      name: "Events",
+      link: "/events",
+    },
+  ];
+
   return (
-    <div className="flex flex-col fixed bg-black text-white inset-x-0 top-0 border-b border-border/40 z-30">
+    <div className="flex flex-col gap-5 fixed bg-black text-white inset-x-0 top-0 border-b border-border/40 z-30">
       <nav className="md:grid grid-cols-12 top-0 flex items-center justify-between h-14 px-3 md:pl-5">
         <Link href="/" className="text-lg font-extrabold text-thunderbird-600">
           TEDxNITH
@@ -31,8 +53,24 @@ export default function Navbar() {
           className="md:col-span-11 flex items-center
          justify-end relative"
         >
-          <ul className="md:flex hidden items-center">
-            <li>
+          <ul className="md:flex hidden items-center gap-5">
+            {navlinks.map((link) => {
+              return (
+                <li key={link.name}>
+                  <Link
+                    href={link.link}
+                    className={clsx(
+                      "mx-2 transition-colors text-white cursor-pointer",
+                      pathname == link.link &&
+                        "text-thunderbird-500 transition-all duration-150 ease-in-out",
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
+            {/* <li>
               <Link href="/about" className={linkClasses}>
                 About
               </Link>
@@ -41,7 +79,7 @@ export default function Navbar() {
               <Link href="/sponsors" className={linkClasses}>
                 Sponsors
               </Link>
-            </li>
+            </li> */}
             {session.data ? (
               <li className="flex items-center">
                 <div
@@ -88,13 +126,22 @@ export default function Navbar() {
       </nav>
       <div className="fixed top-[50px] left-0 px-4 mx-auto w-full h-auto md:hidden z-[100] bg-black">
         {toogleMenu && (
-          <ul className="md:hidden block animate-menu-animation transform-gpu transition-transform duration-200ms ease-in-out">
-            <li className={hamburgerMenuLinkClasses}>
-              <Link href="/about">About</Link>
-            </li>
-            <li className={hamburgerMenuLinkClasses}>
-              <Link href="/sponsors">Sponsors</Link>
-            </li>
+          <div className="md:hidden block animate-menu-animation transform-gpu transition-transform duration-200ms ease-in-out">
+            {navlinks.map((link) => {
+              return (
+                <Link
+                  href={link.link}
+                  key={link.name}
+                  className={clsx(
+                    "p-4 text-lg font-medium border-b last:border-none border-border/40 block",
+                    pathname == link.link &&
+                      "text-thunderbird-500 transition-colors duration-150 ease-in-out",
+                  )}
+                >
+                  <div>{link.name}</div>
+                </Link>
+              );
+            })}
             {session.data ? (
               <li
                 onClick={async () => {
@@ -124,7 +171,7 @@ export default function Navbar() {
                 </li> */}
               </>
             )}
-          </ul>
+          </div>
         )}
       </div>
     </div>
