@@ -59,11 +59,11 @@ export default function Navbar() {
                 <li key={link.name}>
                   <Link
                     href={link.link}
-                    className={clsx(
-                      "mx-2 transition-colors text-white cursor-pointer",
-                      pathname == link.link &&
-                        "text-thunderbird-500 transition-all duration-150 ease-in-out",
-                    )}
+                    className={clsx("mx-2 cursor-pointer", {
+                      "text-white": pathname !== link.link,
+                      "text-thunderbird-500 transition-colors duration-150 ease-in-out":
+                        pathname === link.link,
+                    })}
                   >
                     {link.name}
                   </Link>
@@ -133,9 +133,11 @@ export default function Navbar() {
                   href={link.link}
                   key={link.name}
                   className={clsx(
-                    "p-4 text-lg font-medium border-b last:border-none border-border/40 block",
-                    pathname == link.link &&
-                      "text-thunderbird-500 transition-colors duration-150 ease-in-out",
+                    "p-4 text-lg font-medium border-b last:border-none border-border/40 block transition-colors duration-150 ease-in-out",
+                    {
+                      "text-white": pathname !== link.link,
+                      "text-thunderbird-500": pathname === link.link,
+                    },
                   )}
                 >
                   <div>{link.name}</div>

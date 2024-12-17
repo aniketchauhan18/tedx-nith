@@ -8,6 +8,7 @@ import Link from "next/link";
 import { signUp, useSession } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import SignInWithGoogle from "@/components/buttons/signin-with-google";
+import { toast } from "sonner";
 
 export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
   const { data } = useSession();
@@ -52,13 +53,10 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
           },
           {
             onSuccess: () => {
-              // replace this with toast
-              alert("Success");
+              toast.success("Signed Up Successfully! Explore Now!");
             },
             onError: (ctx) => {
-              // replace this with toast
-              console.log(ctx);
-              alert(ctx.error.statusText);
+              toast.error(ctx.error.message);
             },
           },
         );
@@ -68,12 +66,12 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
     },
   });
 
-  const inputClasses: string = "shadow-none";
+  const inputClasses: string = "shadow-none bg-neutral-50/30 font-normal";
   return (
-    <div className="p-5 rounded-xl bg-white">
-      <div className=" text-2xl md:text-3xl  my-3 font-semibold">
-        <h2>Create your account</h2>
-        <p className="text-sm text-neutral-400 font-extralight">
+    <div className="rounded-xl bg-white">
+      <div className=" text-2xl md:text-3xl my-3 font-bold">
+        <h2 className="-mx-0.5">Create your account</h2>
+        <p className="text-xs text-neutral-400 font-light">
           Already have an account?{" "}
           <Link
             href={
@@ -255,7 +253,7 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
               <Button
                 type="submit"
                 disabled={!canSubmit}
-                className="bg-thunderbird-600/90 rounded-lg border-t-2 border-b-2 border-t-thunderbird-500/35 border-b-thunderbird-700/70 w-full text-base hover:bg-thunderbird-600/95 transition ease-in-out shadow-none"
+                className="bg-thunderbird-600/90 rounded-lg border-t-2 border-b-2 border-t-thunderbird-400/35 border-b-thunderbird-700/70 w-full font-normal text-base hover:bg-thunderbird-600/95 hover:opacity-85 transition-all ease-in-out duration-150 shadow-none "
                 // handling better-auth submission logic above
               >
                 {isSubmitting ? "Signing up..." : "Sign up"}

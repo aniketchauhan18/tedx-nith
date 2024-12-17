@@ -20,7 +20,7 @@ export default function SignInWithGoogle({
           console.error(error);
         }
       }}
-      className=" shadow-none text-neutral-800 hover:bg-neutral-50/75  border-t-2 flex items-center border-b-2 rounded-lg bg-white border w-full transition ease-in-out"
+      className=" shadow-none text-neutral-800 hover:bg-neutral-50/75  border-t-2 flex items-center border-b-2 rounded-lg bg-white border font-normal w-full transition ease-in-out"
     >
       <FcGoogle />
       Sign in with Google

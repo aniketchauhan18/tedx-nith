@@ -1,9 +1,9 @@
-import { Loader } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
 
 export default function Loading() {
   return (
-    <div>
-      <Loader className="text-thunderbird-600 m-auto animate-spin" />
+    <div className="flex justify-center items-center min-h-screen">
+      <LoaderCircle className="text-thunderbird-600 m-auto animate-spin w-12 h-12" />
     </div>
   );
 }

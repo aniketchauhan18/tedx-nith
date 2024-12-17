@@ -8,7 +8,7 @@ export interface AuthSearchParams {
 export default async function SigninPage({ searchParams }: AuthSearchParams) {
   return (
     <main className="min-h-screen flex justify-center items-center w-full">
-      <div className="w-full max-w-sm">
+      <div className="w-full max-w-sm p-3">
         <SigninForm redirectURL={(await searchParams)?.redirectURL} />
       </div>
     </main>

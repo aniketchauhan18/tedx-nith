@@ -9,6 +9,7 @@ import { signIn } from "@/lib/auth-client";
 import { useSession } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import SignInWithGoogle from "@/components/buttons/signin-with-google";
+import { toast } from "sonner";
 
 export default function SigninForm({ redirectURL }: { redirectURL?: string }) {
   const { data } = useSession();
@@ -49,12 +50,11 @@ export default function SigninForm({ redirectURL }: { redirectURL?: string }) {
           {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onSuccess: (ctx) => {
-              // todo: add toast here
-              alert("Sign in successful");
+              toast.success("Welcome Back! You're Signed In!");
             },
             onError: (ctx) => {
               // replace this with toast
-              alert(ctx.error.message);
+              toast.error(ctx.error.message);
             },
           },
         );
@@ -64,12 +64,12 @@ export default function SigninForm({ redirectURL }: { redirectURL?: string }) {
     },
   });
 
-  const inputClasses: string = "shadow-none";
+  const inputClasses: string = "shadow-none bg-neutral-50/30 font-normal";
   return (
-    <div className="p-5 rounded-xl bg-white">
-      <div className="text-2xl md:text-3xl  my-3 font-semibold">
-        <h2>Welcome Back</h2>
-        <p className="text-sm text-neutral-400 font-thin">
+    <div className="rounded-xl bg-white">
+      <div className="text-2xl md:text-3xl my-3 font-bold">
+        <h2 className="-mx-1">Welcome Back</h2>
+        <p className="text-xs text-neutral-400 font-light">
           New here?{" "}
           <Link
             href={
@@ -173,7 +173,7 @@ export default function SigninForm({ redirectURL }: { redirectURL?: string }) {
               <Button
                 type="submit"
                 disabled={!canSubmit}
-                className="bg-thunderbird-600/90 rounded-lg border-t-2 border-b-2 border-t-thunderbird-500/35 border-b-thunderbird-700/70 w-full text-base hover:bg-thunderbird-600/95 transition ease-in-out shadow-none"
+                className="bg-thunderbird-600/90 rounded-lg border-t-2 border-b-2 border-t-thunderbird-400/35 border-b-thunderbird-700/70 w-full font-normal text-base hover:bg-thunderbird-600/95 hover:opacity-85 transition-all ease-in-out duration-150 shadow-none"
                 // handling better-auth submission logic above
               >
                 {isSubmitting ? "Signing in..." : "Sign in"}
