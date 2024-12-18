@@ -6,6 +6,7 @@ import { useSession } from "@/lib/auth-client";
 import { usePathname, useRouter } from "next/navigation";
 import { signOut } from "@/lib/auth-client";
 import clsx from "clsx";
+import Image from "next/image";
 // import { Button } from "./ui/button";
 // import { LogOut } from "lucide-react";
 
@@ -20,9 +21,9 @@ export default function Navbar() {
   };
 
   const linkClasses: string =
-    "mx-2 transition-colors text-white hover:text-white cursor-pointer ";
+    "mx-2 transition-colors font-normal text-sm text-white hover:text-white cursor-pointer ";
   const hamburgerMenuLinkClasses: string =
-    "p-4 text-lg font-medium border-b last:border-none border-border/40 block";
+    "p-4 text-base font-medium border-b last:border-none border-border/40 block";
 
   const navlinks = [
     // {
@@ -30,24 +31,24 @@ export default function Navbar() {
     //   link: "/about"
     // },
     {
-      name: "Sponsors",
+      name: "ABOUT",
+      link: "/about",
+    },
+    {
+      name: "SPEAKERS",
+      link: "/speakers",
+    },
+    {
+      name: "SPONSORS",
       link: "/sponsors",
-    },
-    {
-      name: "Team",
-      link: "/team",
-    },
-    {
-      name: "Events",
-      link: "/events",
     },
   ];
 
   return (
-    <div className="flex flex-col gap-5 fixed bg-black text-white inset-x-0 top-0 border-b border-border/40 z-30">
+    <div className="flex flex-col gap-5 fixed bg-black text-white inset-x-0 top-0  border-border/40 z-30">
       <nav className="md:grid grid-cols-12 top-0 flex items-center justify-between h-14 px-3 md:pl-5">
-        <Link href="/" className="text-lg font-extrabold text-thunderbird-600">
-          TEDxNITH
+        <Link href="/" className="w-[7rem]">
+          <Image src="/logo-white.png" width={200} height={50} alt="" />
         </Link>
         <div
           className="md:col-span-11 flex items-center
@@ -59,9 +60,9 @@ export default function Navbar() {
                 <li key={link.name}>
                   <Link
                     href={link.link}
-                    className={clsx("mx-2 cursor-pointer", {
+                    className={clsx("mx-2 cursor-pointer text-sm", {
                       "text-white": pathname !== link.link,
-                      "text-thunderbird-500 transition-colors duration-150 ease-in-out":
+                      "text-thunderbird-500 transition-colors  duration-150 ease-in-out":
                         pathname === link.link,
                     })}
                   >
@@ -98,14 +99,14 @@ export default function Navbar() {
                     }
                   }}
                 >
-                  Sign out
+                  SIGN OUT
                 </div>
               </li>
             ) : (
               <>
                 <li>
                   <Link href="/sign-in" className={linkClasses}>
-                    Sign In
+                    SIGN IN
                   </Link>
                 </li>
                 {/* <li>
@@ -133,7 +134,7 @@ export default function Navbar() {
                   href={link.link}
                   key={link.name}
                   className={clsx(
-                    "p-4 text-lg font-medium border-b last:border-none border-border/40 block transition-colors duration-150 ease-in-out",
+                    "p-4 text-base font-medium border-b  last:border-none border-border/40 block transition-colors duration-150 ease-in-out",
                     {
                       "text-white": pathname !== link.link,
                       "text-thunderbird-500": pathname === link.link,
@@ -161,12 +162,12 @@ export default function Navbar() {
                 }}
                 className={`${hamburgerMenuLinkClasses} cursor-pointer`}
               >
-                Sign Out
+                SIGN OUT
               </li>
             ) : (
               <>
                 <li className={hamburgerMenuLinkClasses}>
-                  <Link href="/sign-in">Sign In</Link>
+                  <Link href="/sign-in">SIGN IN</Link>
                 </li>
                 {/* <li className={hamburgerMenuLinkClasses}>
                   <Link href="/sign-up">Sign Up</Link>

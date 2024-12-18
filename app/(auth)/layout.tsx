@@ -22,7 +22,7 @@ export default function AuthLayout({
             <p className="text-lg opacity-90">
               Join us at{" "}
               <span className="font-extrabold text-thunderbird-600">
-                TEDxNITH
+                TEDx<span className="text-white">NITH</span>
               </span>
             </p>
           </div>
