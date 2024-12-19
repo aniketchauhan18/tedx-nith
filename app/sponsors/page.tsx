@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 export default function SponsorsPage() {
@@ -6,7 +7,10 @@ export default function SponsorsPage() {
       <header>
         <Navbar />
       </header>
-      <div className="pt-14">Sponsors page</div>
+      <div className="py-14 min-h-screen">Sponsors page</div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

@@ -1,12 +1,16 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
-export default function Events() {
+export default function Speakers() {
   return (
     <div>
-      <header>
+      <header className="z-10">
         <Navbar />
       </header>
-      <div className="pt-14">Events Page</div>
+      <div className="py-14 min-h-screen"></div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

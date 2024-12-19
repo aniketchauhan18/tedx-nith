@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { CircleCheck, CircleX } from "lucide-react";
+import { SanityLive } from "@/sanity/lib/live";
 
 const geistSans = Geist({
   subsets: ["latin", "latin-ext"],
@@ -36,6 +37,7 @@ export default function RootLayout({
             error: <CircleX className="w-4 h-4 text-red-500" />,
           }}
         />
+        <SanityLive />
       </body>
     </html>
   );
