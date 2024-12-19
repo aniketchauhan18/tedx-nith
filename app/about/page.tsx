@@ -26,8 +26,6 @@ export default async function AboutPage() {
       <header>
         <Navbar />
       </header>
-
-      {/* Hero Section */}
       <div className="relative h-[40vh] sm:h-[70vh] bg-black">
         <Image
           src="/about/temp-tedx-team.jpg"
@@ -36,10 +34,19 @@ export default async function AboutPage() {
           className="object-cover opacity-70"
         />
         <div className="absolute bottom-3 left-2 sm:bottom-5 sm:left-5 flex items-center justify-center w-full sm:w-full sm:justify-start">
-          <h1 className="text-3xl md:text-4xl font-bold text-white">
-            Meet <span className="font-bold text-thunderbird-600">TEDx</span>
-            NITH Team
-          </h1>
+          <div className="flex gap-2 items-center text-3xl md:text-4xl font-bold text-white">
+            <h3>Meet</h3>
+            <div className="w-[11rem] md:w-[13.5rem] -mx-3 md:-mx-4">
+              <Image
+                src="/logo-white.png"
+                className="w-full"
+                alt=""
+                height={60}
+                width={1200}
+              />
+            </div>
+            <h3>Team</h3>
+          </div>
         </div>
       </div>
 
