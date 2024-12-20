@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function AuthLayout({
+export default function RegisterLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (

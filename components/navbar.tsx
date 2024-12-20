@@ -2,9 +2,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { useSession } from "@/lib/auth-client";
-import { usePathname, useRouter } from "next/navigation";
-import { signOut } from "@/lib/auth-client";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
 // import { Button } from "./ui/button";
@@ -12,18 +10,17 @@ import Image from "next/image";
 
 export default function Navbar() {
   const [toogleMenu, setToogleMenu] = useState<boolean>(false);
-  const session = useSession();
-  const router = useRouter();
+  // const router = useRouter();
   const pathname = usePathname();
 
   const handleToogleMenu = () => {
     setToogleMenu((prev) => !prev);
   };
 
-  const linkClasses: string =
-    "mx-2 transition-colors font-normal text-sm text-white hover:text-white cursor-pointer ";
-  const hamburgerMenuLinkClasses: string =
-    "p-4 text-base font-medium border-b last:border-none border-border/40 block";
+  // const linkClasses: string =
+  //   "mx-2 transition-colors font-normal text-sm text-white hover:text-white cursor-pointer ";
+  // const hamburgerMenuLinkClasses: string =
+  //   "p-4 text-base font-medium border-b last:border-none border-border/40 block";
 
   const navlinks = [
     // {
@@ -41,6 +38,10 @@ export default function Navbar() {
     {
       name: "SPONSORS",
       link: "/sponsors",
+    },
+    {
+      name: "REGISTER",
+      link: "/register",
     },
   ];
 
@@ -81,41 +82,6 @@ export default function Navbar() {
                 Sponsors
               </Link>
             </li> */}
-            {session.data ? (
-              <li className="flex items-center">
-                <div
-                  className={linkClasses}
-                  onClick={async () => {
-                    try {
-                      await signOut({
-                        fetchOptions: {
-                          onSuccess: () => {
-                            router.push("/");
-                          },
-                        },
-                      });
-                    } catch (error) {
-                      console.log(error);
-                    }
-                  }}
-                >
-                  SIGN OUT
-                </div>
-              </li>
-            ) : (
-              <>
-                <li>
-                  <Link href="/sign-in" className={linkClasses}>
-                    SIGN IN
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link href="/sign-up" className={linkClasses}>
-                    Sign Up
-                  </Link>
-                </li> */}
-              </>
-            )}
           </ul>
           <div>
             <Menu
@@ -145,35 +111,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            {session.data ? (
-              <li
-                onClick={async () => {
-                  try {
-                    await signOut({
-                      fetchOptions: {
-                        onSuccess: () => {
-                          router.push("/");
-                        },
-                      },
-                    });
-                  } catch (error) {
-                    console.log(error);
-                  }
-                }}
-                className={`${hamburgerMenuLinkClasses} cursor-pointer`}
-              >
-                SIGN OUT
-              </li>
-            ) : (
-              <>
-                <li className={hamburgerMenuLinkClasses}>
-                  <Link href="/sign-in">SIGN IN</Link>
-                </li>
-                {/* <li className={hamburgerMenuLinkClasses}>
-                  <Link href="/sign-up">Sign Up</Link>
-                </li> */}
-              </>
-            )}
           </div>
         )}
       </div>

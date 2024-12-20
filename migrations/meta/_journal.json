@@ -8,6 +8,20 @@
       "when": 1734403214810,
       "tag": "0000_fearless_dracula",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1734677963103,
+      "tag": "0001_clammy_gorilla_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1734680418672,
+      "tag": "0002_jittery_black_panther",
+      "breakpoints": true
     }
   ]
 }

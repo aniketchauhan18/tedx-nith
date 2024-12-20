@@ -5,16 +5,15 @@ import { Input } from "@/components/ui/input";
 import type { FieldApi } from "@tanstack/react-form";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { signUp, useSession } from "@/lib/auth-client";
-import { redirect } from "next/navigation";
-import SignInWithGoogle from "@/components/buttons/signin-with-google";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
-  const { data } = useSession();
-  if (data?.user) {
-    redirect(redirectURL || "/");
-  }
+export default function RegisterForm({
+  redirectURL,
+}: {
+  redirectURL?: string;
+}) {
+  const router = useRouter();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function FieldInfo({ field }: { field: FieldApi<any, any, any, any> }) {
@@ -34,8 +33,6 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
       lastName: "",
       email: "",
       // image: null, // will add ir later if needed
-      password: "",
-      gender: "",
     },
   });
 
@@ -43,25 +40,33 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
     ...formOpts,
     onSubmit: async ({ value }) => {
       try {
-        const { firstName, lastName, email, password } = value;
-        await signUp.email(
-          {
-            email,
-            password,
-            name: `${firstName} ${lastName}`,
-            callbackURL: decodeURIComponent(redirectURL || "/"),
+        const { firstName, lastName, email } = value;
+        const formObj = {
+          name: `${firstName} ${lastName}`,
+          email,
+        };
+        
+        // fetch req
+        const res = await fetch("/api/v1/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
           },
-          {
-            onSuccess: () => {
-              toast.success("Signed Up Successfully! Explore Now!");
-            },
-            onError: (ctx) => {
-              toast.error(ctx.error.message);
-            },
-          },
-        );
+          body: JSON.stringify(formObj)
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          form.reset();
+          toast.success(data.message ? data.message : "User registered Successfully");
+          router.push(redirectURL || "/");
+        }
+        if (res.status === 409) {
+          toast.error(data.error ? data.error : "User is already registered");
+        }
       } catch (error) {
         console.log(error);
+        toast.error("User registration failed");
       }
     },
   });
@@ -70,18 +75,14 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
   return (
     <div className="rounded-xl bg-white">
       <div className=" text-2xl md:text-3xl my-3 font-bold">
-        <h2 className="-mx-0.5">Create your account</h2>
+        <h2 className="-mx-0.5">Register For Event</h2>
         <p className="text-xs text-neutral-400 font-light">
-          Already have an account?{" "}
+          Already register?{" "}
           <Link
-            href={
-              redirectURL
-                ? `/sign-in?redirectURL=${encodeURIComponent(redirectURL)}`
-                : "/sign-in"
-            }
+            href={"/"}
             className="text-thunderbird-700 hover:text-thunderbird-600 transition ease-in-out hover:underline-offset hover:underline"
           >
-            Sign in
+            Home
           </Link>
         </p>
       </div>
@@ -207,44 +208,6 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
             }}
           ></form.Field>
         </div>
-        <div>
-          <form.Field
-            name="password"
-            validators={{
-              onChange: ({ value }) =>
-                !value
-                  ? "Password required"
-                  : value.length < 6
-                    ? "Password must contain at least 6 characters"
-                    : undefined,
-              // asynchronous validations
-              onChangeAsyncDebounceMs: 300,
-              onChangeAsync: async ({ value }) => {
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-                return (
-                  value.includes("error") && 'No "error" allowed in password'
-                );
-              },
-            }}
-            // eslint-disable-next-line react/no-children-prop
-            children={(field) => {
-              return (
-                <>
-                  <Label htmlFor={field.name}>Password</Label>
-                  <Input
-                    id={field.name}
-                    value={field.state.value}
-                    onBlur={field.handleBlur}
-                    placeholder="********"
-                    onChange={(e) => field.handleChange(e.target.value)}
-                    className={inputClasses}
-                  />
-                  <FieldInfo field={field} />
-                </>
-              );
-            }}
-          ></form.Field>
-        </div>
         <div className="w-full flex justify-center pt-2">
           <form.Subscribe
             selector={(state) => [state.canSubmit, state.isSubmitting]}
@@ -254,19 +217,12 @@ export default function SignupForm({ redirectURL }: { redirectURL?: string }) {
                 type="submit"
                 disabled={!canSubmit}
                 className="bg-thunderbird-600/90 rounded-lg border-t-2 border-b-2 border-t-thunderbird-400/35 border-b-thunderbird-700/70 w-full font-normal text-base hover:bg-thunderbird-600/95 hover:opacity-85 transition-all ease-in-out duration-150 shadow-none "
-                // handling better-auth submission logic above
               >
-                {isSubmitting ? "Signing up..." : "Sign up"}
+                {isSubmitting ? "Registering..." : "Register"}
               </Button>
             )}
           />
         </div>
-        <div className="flex items-center gap-3 w-full">
-          <div className="border-b border-neutral-300 flex-1 block"></div>
-          <p className="text-neutral-600 font-medium text-xs">OR</p>
-          <div className="border-b border-neutral-300 flex-1 block"></div>
-        </div>
-        <SignInWithGoogle redirectURL={redirectURL} />
       </form>
     </div>
   );

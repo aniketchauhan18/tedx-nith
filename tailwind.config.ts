@@ -102,6 +102,8 @@ export default {
       animation: {
         "menu-animation": "menu-animation 1s ease-out",
         "fade-in": "fade-in 0.5s ease-out",
+        "spin-slow": "spin 20s linear infinite",
+        "bounce-slow": "bounce 3s infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
