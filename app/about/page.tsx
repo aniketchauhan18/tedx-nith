@@ -5,6 +5,7 @@ import { MEMBERS_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
+import { Oswald } from "next/font/google";
 import { Dancing_Script } from "next/font/google";
 
 export const metadata: Metadata = {
@@ -57,8 +58,8 @@ interface ICoreTeamMember {
 //   weight: ["400"]
 // })
 
-const dancingScript = Dancing_Script({
-  subsets: ["latin", "vietnamese", "latin-ext"],
+const oswald = Oswald({
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
 });
 
@@ -230,18 +231,21 @@ export default async function AboutPage() {
           </p>
         </div>
       </section>
-      <section className="py-16 px-4 bg-white text-black">
+      <section className="py-5 px-4 bg-white text-black">
         <div className="max-w-7xl mx-auto">
           <h2
-            className={`text-3xl h-[5rem] sm:text-4xl bg-gradient-to-br text-transparent bg-clip-text from-thunderbird-400 via-thunderbird-600 flex justify-center items-center to-bg-thunderbird-700 lg:text-5xl font-extrabold text-center mb-12  ${dancingScript.className}`}
+            className={`text-3xl h-[5rem] sm:text-4xl flex justify-center items-center lg:text-5xl font-bold text-center mb-10  ${oswald.className}`}
           >
-            Our Core Team
+            Our Core{" "}
+            <span className="text-red-700 flex justify-center items-center lg:text-5xl font-bold text-center px-3">
+              Team
+            </span>
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {membersDetails.map((member) => (
               <div
-                className="flex flex-col items-center transition-all duration-300"
+                className="flex flex-col items-center justify-center transition-all duration-300"
                 key={member._id}
               >
                 <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60">
@@ -254,13 +258,13 @@ export default async function AboutPage() {
                     alt={member.name}
                     layout="fill"
                     objectFit="cover"
-                    className="relative z-10 rounded-full"
+                    className="relative z-10 rounded-full ring-4 ring-red-500 shadow-lg shadow-red-400 "
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mt-5 text-neutral-900">
+                <h3 className="text-lg sm:text-xl font-bold mt-3 text-neutral-900">
                   {member.name}
                 </h3>
-                <p className="text-base sm:text-lg bg-thunderbird-700 px-2 text-white font-light">
+                <p className="sm:text-lg text-neutral-900 italic text-sm font-light">
                   {member.role}
                 </p>
               </div>
