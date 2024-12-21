@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
   const existingUser = await db.query.users.findFirst({
     where: eq(users.email, email),
-  })
+  });
   if (existingUser) {
     return NextResponse.json(
       {

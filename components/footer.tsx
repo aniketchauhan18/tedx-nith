@@ -52,7 +52,7 @@ export default function Footer() {
         </p>
       </div>
       <div className="w-full md:flex md:justify-end md:items-end">
-        <div className="flex gap-3 flex-row">
+        <div className="flex gap-3">
           {socialLinks.map((social) => {
             return (
               <Link key={social.link} href={social.link} target="_blank">

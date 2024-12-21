@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import CountdownTimer from "@/components/timer-component";
 import Image from "next/image";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
@@ -22,7 +23,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+          <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8">
             <div className="container mx-auto">
               <div className="max-w-3xl animate-fade-in">
                 <div>
@@ -35,18 +36,17 @@ export default function Home() {
                       width={1200}
                     />
                   </div>
-                  <p className="text-xl md:text-3xl text-white font-medium">
+                  {/* <p className="text-xl md:text-3xl text-white font-medium">
                     Innovision: ज्ञानं परमं बलम्
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-        <section className="container mx-auto px-4 py-16">
-          <div className="max-w-7xl mx-auto space-y-6">
-            <h2 className="text-3xl font-bold mb-6">
+        <section className="mx-auto py-16">
+          <div className="max-w-7xl mx-auto space-y-6  ">
+            <h2 className="text-3xl font-bold mb-6 px-4 ">
               <Typewriter
                 words={["What is TEDx?"]}
                 loop={false}
@@ -57,7 +57,7 @@ export default function Home() {
                 delaySpeed={3000}
               />
             </h2>
-            <div className="space-y-2 sm:text-base leading-relaxed font-light text-sm">
+            <div className="space-y-2 sm:text-base leading-relaxed font-light text-sm  px-4">
               <p>
                 In the spirit of discovering and spreading ideas,{" "}
                 <Link
@@ -85,6 +85,58 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="flex flex-col bg-white justify-center items-center h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-[100vh]">
+          <div className="text-5xl sm:text-5xl md:text-7xl lg:text-9xl text-center font-bold">
+            <h1 className="tracking-widest">INNOVISION</h1>
+            <p className="text-thunderbird-600">ज्ञानं परमं भूषणम्</p>
+          </div>
+          <div className="py-10">
+            <CountdownTimer />
+          </div>
+        </section>
+        <section className="min-h-[50vh] grid md:grid-cols-2 items-center gap-12 px-4 md:px-16 py-5 text-neutral-950">
+          <div className="flex flex-col items-start space-y-2 w-full p-8">
+            <h2 className="text-lg md:text-xl  text-thunderbird-600 font-bold tracking-tight">
+              Event Venue
+            </h2>
+            <div className="space-y-1">
+              <div className="flex items-center space-x-3">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 ">
+                  Auditorium, NIT Hamirpur
+                </p>
+              </div>
+            </div>
+            <div>
+              <p className="text-neutral-600">
+                Join us for TEDx NITH on February 13, 2025, at the auditorium!
+                Discover innovative ideas and inspiring talks from thought
+                leaders. Don&lsquo;t miss out{" "}
+                <Link
+                  href="/register"
+                  className="font-light text-blue-600 hover:underline transition-all duration-300 ease-out"
+                >
+                  register now
+                </Link>{" "}
+                to secure your spot and be part of this exciting event!
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full flex justify-center p-4">
+            <div className="relative group">
+              <Image
+                src="/tedx-temp.jpg"
+                className="w-full max-w-2xl"
+                alt="TEDx Event Venue"
+                height={600}
+                width={1200}
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          </div>
+        </section>
+        
       </main>
       <footer>
         <Footer />
