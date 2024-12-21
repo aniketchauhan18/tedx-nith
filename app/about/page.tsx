@@ -5,19 +5,69 @@ import { MEMBERS_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
+import { Dancing_Script } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "TEDx NIT Hamirpur, date - 13 February 2024  and theme (Innovision - ज्ञानं परमं बलम्",
+    "TEDx NIT Hamirpur, date - 13 February 2024  and theme (Innovision - ज्ञानं परमं बलम् )",
   // todo: change description later
 };
 
+type Slug = {
+  current: string;
+  _type: string;
+};
+
+interface ICoreTeamMember {
+  _id: string;
+  name: string;
+  slug: Slug;
+  role: string;
+  memberImageUrl: string;
+}
+
+// interface TeamMember {
+//   name: string;
+//   position: string;
+//   image: string;
+// }
+
+// const coreTeamMembers: TeamMember[] = [
+//   {
+//     name: "John Doe",
+//     position: "President",
+//     image: "/demo-member.jpg", // Add actual image paths
+//   },
+//   {
+//     name: "Jane Smith",
+//     position: "Vice President",
+//     image: "/demo-member.jpg",
+//   },
+//   {
+//     name: "Mike Johnson",
+//     position: "Technical Lead",
+//     image: "/demo-member.jpg",
+//   },
+//   // Add more team members as needed
+// ];
+
+// const waterBrush = Water_Brush({
+//   subsets: ["latin", "vietnamese", "latin-ext"],
+//   weight: ["400"]
+// })
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin", "vietnamese", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export default async function AboutPage() {
-  await sanityFetch({
+  const data = await sanityFetch({
     query: MEMBERS_QUERY,
   });
-  // console.log(membersDetails);
+
+  const membersDetails: ICoreTeamMember[] = data.data;
 
   const linkClasses: string =
     "font-light text-blue-600 hover:underline hover:underline-offset-2 transition-all duration-300 ease-out";
@@ -178,6 +228,44 @@ export default async function AboutPage() {
               TED&apos;s many programs and initiatives.
             </Link>
           </p>
+        </div>
+      </section>
+      <section className="py-16 px-4 bg-white text-black">
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className={`text-3xl h-[5rem] sm:text-4xl bg-gradient-to-br text-transparent bg-clip-text from-thunderbird-400 via-thunderbird-600 flex justify-center items-center to-bg-thunderbird-700 lg:text-5xl font-extrabold text-center mb-12  ${dancingScript.className}`}
+          >
+            Our Core Team
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {membersDetails.map((member) => (
+              <div
+                className="flex flex-col items-center transition-all duration-300"
+                key={member._id}
+              >
+                <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60">
+                  {/* <div 
+                    className="absolute w-full h-full bg-neutral-900
+                               transform translate-x-3 translate-y-3 rounded-full"
+                  /> */}
+                  <Image
+                    src={member.memberImageUrl}
+                    alt={member.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="relative z-10 rounded-full"
+                  />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mt-5 text-neutral-900">
+                  {member.name}
+                </h3>
+                <p className="text-base sm:text-lg bg-thunderbird-700 px-2 text-white font-light">
+                  {member.role}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <footer>
