@@ -5,19 +5,69 @@ import { MEMBERS_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
+import { Oswald } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "TEDx NIT Hamirpur, date - 13 February 2024  and theme (Innovision - ज्ञानं परमं बलम्",
+    "TEDx NIT Hamirpur, date - 13 February 2024  and theme (Innovision - ज्ञानं परमं बलम् )",
   // todo: change description later
 };
 
+type Slug = {
+  current: string;
+  _type: string;
+};
+
+interface ICoreTeamMember {
+  _id: string;
+  name: string;
+  slug: Slug;
+  role: string;
+  memberImageUrl: string;
+}
+
+// interface TeamMember {
+//   name: string;
+//   position: string;
+//   image: string;
+// }
+
+// const coreTeamMembers: TeamMember[] = [
+//   {
+//     name: "John Doe",
+//     position: "President",
+//     image: "/demo-member.jpg", // Add actual image paths
+//   },
+//   {
+//     name: "Jane Smith",
+//     position: "Vice President",
+//     image: "/demo-member.jpg",
+//   },
+//   {
+//     name: "Mike Johnson",
+//     position: "Technical Lead",
+//     image: "/demo-member.jpg",
+//   },
+//   // Add more team members as needed
+// ];
+
+// const waterBrush = Water_Brush({
+//   subsets: ["latin", "vietnamese", "latin-ext"],
+//   weight: ["400"]
+// })
+
+const oswald = Oswald({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export default async function AboutPage() {
-  await sanityFetch({
+  const data = await sanityFetch({
     query: MEMBERS_QUERY,
   });
-  // console.log(membersDetails);
+
+  const membersDetails: ICoreTeamMember[] = data.data;
 
   const linkClasses: string =
     "font-light text-blue-600 hover:underline hover:underline-offset-2 transition-all duration-300 ease-out";
@@ -178,6 +228,47 @@ export default async function AboutPage() {
               TED&apos;s many programs and initiatives.
             </Link>
           </p>
+        </div>
+      </section>
+      <section className="py-5 px-4 bg-white text-black">
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className={`text-3xl h-[5rem] sm:text-4xl flex justify-center items-center lg:text-5xl font-bold text-center mb-10  ${oswald.className}`}
+          >
+            Our Core{" "}
+            <span className="text-red-700 flex justify-center items-center lg:text-5xl font-bold text-center px-3">
+              Team
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {membersDetails.map((member) => (
+              <div
+                className="flex flex-col items-center justify-center transition-all duration-300"
+                key={member._id}
+              >
+                <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60">
+                  {/* <div 
+                    className="absolute w-full h-full bg-neutral-900
+                               transform translate-x-3 translate-y-3 rounded-full"
+                  /> */}
+                  <Image
+                    src={member.memberImageUrl}
+                    alt={member.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="relative z-10 rounded-full ring-4 ring-red-500 shadow-lg shadow-red-400 "
+                  />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold mt-3 text-neutral-900">
+                  {member.name}
+                </h3>
+                <p className="sm:text-lg text-neutral-900 italic text-sm font-light">
+                  {member.role}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <footer>
