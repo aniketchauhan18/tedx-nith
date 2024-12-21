@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
 import { Oswald } from "next/font/google";
+import { Dancing_Script } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "About",

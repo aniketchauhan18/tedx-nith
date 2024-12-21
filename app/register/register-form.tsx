@@ -45,20 +45,22 @@ export default function RegisterForm({
           name: `${firstName} ${lastName}`,
           email,
         };
-        
+
         // fetch req
         const res = await fetch("/api/v1/register", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(formObj)
+          body: JSON.stringify(formObj),
         });
 
         const data = await res.json();
         if (res.ok) {
           form.reset();
-          toast.success(data.message ? data.message : "User registered Successfully");
+          toast.success(
+            data.message ? data.message : "User registered Successfully",
+          );
           router.push(redirectURL || "/");
         }
         if (res.status === 409) {
