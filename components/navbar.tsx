@@ -41,22 +41,22 @@ export default function Navbar() {
     },
     {
       name: "REGISTER",
-      link: "/register",
-    },
+      link: "/register"
+    }
   ];
 
   return (
-    <div className="flex flex-col gap-5 fixed bg-black text-white inset-x-0 top-0  border-border/40 z-30">
-      <nav className="md:grid grid-cols-12 top-0 flex items-center justify-between h-14 px-3 md:pl-5">
+    <div className="flex bg-black text-white opacity-90 flex-col gap-5 fixed inset-x-0 top-0  border-border/40 z-30">
+      <nav className="top-0 flex items-center justify-between h-14 px-3 md:pl-5">
         <Link href="/" className="w-[7rem]">
           <Image src="/logo-white.png" width={200} height={50} alt="" />
         </Link>
         <div
-          className="md:col-span-11 flex items-center
-         justify-end relative"
+          className="flex flex-1 items-center
+         md:justify-center justify-end relative"
         >
           <ul className="md:flex hidden items-center gap-5">
-            {navlinks.map((link) => {
+            {navlinks.slice(0,3).map((link) => {
               return (
                 <li key={link.name}>
                   <Link
@@ -72,24 +72,19 @@ export default function Navbar() {
                 </li>
               );
             })}
-            {/* <li>
-              <Link href="/about" className={linkClasses}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/sponsors" className={linkClasses}>
-                Sponsors
-              </Link>
-            </li> */}
           </ul>
-          <div>
+          <div className="md:hidden flex justify-end">
             <Menu
-              className="text-white overflow-hidden block md:hidden cursor-pointer"
+              className="overflow-hidden block md:hidden cursor-pointer"
               onClick={handleToogleMenu}
             />
           </div>
         </div>
+          <div className="mr-4 md:flex hidden">
+            <Link href="/register" className="text-sm text-white">
+            REGISTER
+            </Link>
+          </div>
       </nav>
       <div className="fixed top-[50px] left-0 px-4 mx-auto w-full h-auto md:hidden z-[100] bg-black">
         {toogleMenu && (
