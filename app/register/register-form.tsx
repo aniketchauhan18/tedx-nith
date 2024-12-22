@@ -75,7 +75,7 @@ export default function RegisterForm({
 
   const inputClasses: string = "shadow-none bg-neutral-50/30 font-normal";
   return (
-    <div className="rounded-xl bg-white">
+    <div className="rounded-xl bg-white w-full  ">
       <div className=" text-2xl md:text-3xl my-3 font-bold">
         <h2 className="-mx-0.5">Register For Event</h2>
         <p className="text-xs text-neutral-400 font-light">
