@@ -6,19 +6,19 @@ import type { Metadata } from "next";
 import { SPEAKERS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/live";
 
-type Slug = {
-  current: string;
-  _type: string;
-};
+// type Slug = {
+//   current: string;
+//   _type: string;
+// };
 
-interface ISpeaker {
-  _id: string;
-  name: string;
-  slug: Slug;
-  shortBio: string;
-  Description: string;
-  speakerImageUrl: string;
-}
+// interface ISpeaker {
+//   _id: string;
+//   name: string;
+//   slug: Slug;
+//   shortBio: string;
+//   Description: string;
+//   speakerImageUrl: string;
+// }
 
 export const metadata: Metadata = {
   title: "Speakers",
