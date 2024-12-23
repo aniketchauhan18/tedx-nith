@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@neondatabase/serverless':
+        specifier: ^0.10.4
+        version: 0.10.4
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.4
         version: 2.1.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -37,7 +40,7 @@ importers:
         version: 16.4.7
       drizzle-orm:
         specifier: ^0.38.2
-        version: 0.38.2(@types/pg@8.11.10)(@types/react@19.0.1)(kysely@0.27.5)(pg@8.13.1)(postgres@3.4.5)(react@19.0.0)
+        version: 0.38.2(@neondatabase/serverless@0.10.4)(@types/pg@8.11.10)(@types/react@19.0.1)(kysely@0.27.5)(pg@8.13.1)(postgres@3.4.5)(react@19.0.0)
       lucide-react:
         specifier: ^0.468.0
         version: 0.468.0(react@19.0.0)
@@ -1416,6 +1419,9 @@ packages:
   '@marijn/find-cluster-break@1.0.2':
     resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
+  '@neondatabase/serverless@0.10.4':
+    resolution: {integrity: sha512-2nZuh3VUO9voBauuh+IGYRhGU/MskWHt1IuZvHcJw6GLjDgtqj/KViKo7SIrLdGLdot7vFbiRRw+BgEy3wT9HA==}
+
   '@next/env@15.1.0':
     resolution: {integrity: sha512-UcCO481cROsqJuszPPXJnb7GGuLq617ve4xuAyyNG4VSSocJNtMU5Fsx+Lp6mlN8c7W58aZLc5y6D/2xNmaK+w==}
 
@@ -2439,6 +2445,9 @@ packages:
 
   '@types/pg@8.11.10':
     resolution: {integrity: sha512-LczQUW4dbOQzsH2RQ5qoeJ6qJPdrcM/DcMLoqWQkMLMsq83J5lAX3LXjdkWdpscFy67JSOWDnh7Ny/sPFykmkg==}
+
+  '@types/pg@8.11.6':
+    resolution: {integrity: sha512-/2WmmBXHLsfRqzfHW7BNZ8SbYzE8OSk7i3WjFYvfgRHj7S1xj+16Je5fUKv3lVdVzk/zn9TXOqf+avFCFIE0yQ==}
 
   '@types/progress-stream@2.0.5':
     resolution: {integrity: sha512-5YNriuEZkHlFHHepLIaxzq3atGeav1qCTGzB74HKWpo66qjfostF+rHc785YYYHeBytve8ZG3ejg42jEIfXNiQ==}
@@ -7373,6 +7382,10 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
+  '@neondatabase/serverless@0.10.4':
+    dependencies:
+      '@types/pg': 8.11.6
+
   '@next/env@15.1.0': {}
 
   '@next/eslint-plugin-next@15.1.0':
@@ -8498,6 +8511,12 @@ snapshots:
       pg-protocol: 1.7.0
       pg-types: 4.0.2
 
+  '@types/pg@8.11.6':
+    dependencies:
+      '@types/node': 20.17.10
+      pg-protocol: 1.7.0
+      pg-types: 4.0.2
+
   '@types/progress-stream@2.0.5':
     dependencies:
       '@types/node': 20.17.10
@@ -9371,8 +9390,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.38.2(@types/pg@8.11.10)(@types/react@19.0.1)(kysely@0.27.5)(pg@8.13.1)(postgres@3.4.5)(react@19.0.0):
+  drizzle-orm@0.38.2(@neondatabase/serverless@0.10.4)(@types/pg@8.11.10)(@types/react@19.0.1)(kysely@0.27.5)(pg@8.13.1)(postgres@3.4.5)(react@19.0.0):
     optionalDependencies:
+      '@neondatabase/serverless': 0.10.4
       '@types/pg': 8.11.10
       '@types/react': 19.0.1
       kysely: 0.27.5
