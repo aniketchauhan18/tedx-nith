@@ -56,18 +56,26 @@ export default function Footer() {
         </h2>
         <ul className="space-y-1 md:space-y-0 font-medium md:flex md:items-center md:justify-around md:flex-1">
           <li className="flex items-center ">
-            <Link href="/about" className="font-medium">About</Link>
+            <Link href="/about" className="font-light">
+              About
+            </Link>
           </li>
           <li>
-            <Link href="/speakers" className="font-medium">Speakers</Link>
+            <Link href="/speakers" className="font-light">
+              Speakers
+            </Link>
           </li>
           <li>
-            <Link href="/sponsors" className="font-medium">Sponsors</Link>
+            <Link href="/sponsors" className="font-light">
+              Sponsors
+            </Link>
           </li>
           <li>
-            <Link href="/register" className="font-medium">Register</Link>
+            <Link href="/register" className="font-light">
+              Register
+            </Link>
           </li>
-          </ul>
+        </ul>
       </div>
       <div className="md:flex md:justify-end md:items-end">
         <div className="md:flex flex justify-around gap-3">

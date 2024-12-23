@@ -5,7 +5,7 @@ export default function EventRegisterPage() {
   return (
     <main className="min-h-screen flex flex-col justify-center items-center w-full">
       <div className="lg:hidden h-48 flex items-center bg-neutral-950 w-full justify-center">
-        <Image 
+        <Image
           src="/logo-white.png"
           alt=""
           width={900}

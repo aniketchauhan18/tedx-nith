@@ -41,8 +41,8 @@ export default function Navbar() {
     },
     {
       name: "REGISTER",
-      link: "/register"
-    }
+      link: "/register",
+    },
   ];
 
   return (
@@ -56,7 +56,7 @@ export default function Navbar() {
          md:justify-center justify-end relative"
         >
           <ul className="md:flex hidden items-center gap-5">
-            {navlinks.slice(0,3).map((link) => {
+            {navlinks.slice(0, 3).map((link) => {
               return (
                 <li key={link.name}>
                   <Link
@@ -80,11 +80,11 @@ export default function Navbar() {
             />
           </div>
         </div>
-          <div className="mr-4 md:flex hidden">
-            <Link href="/register" className="text-sm text-white">
+        <div className="mr-4 md:flex hidden">
+          <Link href="/register" className="text-sm text-white">
             REGISTER
-            </Link>
-          </div>
+          </Link>
+        </div>
       </nav>
       <div className="fixed top-[50px] left-0 px-4 mx-auto w-full h-auto md:hidden z-[100] bg-black">
         {toogleMenu && (
