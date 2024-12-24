@@ -230,7 +230,7 @@ export default async function AboutPage() {
           </p>
         </div>
       </section>
-      <section className="py-5 px-4 bg-white text-black">
+      <section className="py-10 md:py-16 lg:py-20 px-4 bg-white text-black">
         <div className="max-w-7xl mx-auto">
           <h2
             className={`text-3xl h-[5rem] sm:text-4xl flex justify-center items-center lg:text-5xl font-bold text-center mb-10  ${oswald.className}`}

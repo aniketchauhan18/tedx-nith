@@ -1,6 +1,6 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import { Playfair } from "next/font/google";
+// import { Playfair } from "next/font/google";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { SPEAKERS_QUERY } from "@/sanity/lib/queries";
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   description: "Meet our speakers",
 };
 
-const playFair = Playfair({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
+// const playFair = Playfair({
+//   subsets: ["latin"],
+//   weight: ["300", "400", "500", "600", "700", "800", "900"],
+// });
 
 export default async function Speakers() {
   await sanityFetch({
@@ -40,7 +40,7 @@ export default async function Speakers() {
       <header className="z-10">
         <Navbar />
       </header>
-      <div className={` ${playFair.className} py-14 min-h-screen`}>
+      <div className={`py-14 min-h-screen`}>
         <section className="min-h-[20vh] flex justify-center items-center sm:min-h-[25vh] lg:min-h-[35vh]">
           <div className="text-center font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-800">
             MEET OUR{" "}

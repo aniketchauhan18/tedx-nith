@@ -64,7 +64,7 @@ export default function Home() {
                   href="https://www.ted.com/about/programs-initiatives/tedx-program"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-red-600 hover:underline duration-300 transition-all ease-out"
+                  className="text-thunderbird-600 hover:underline duration-300 transition-all ease-out"
                 >
                   TED has created a program called TEDx
                 </Link>
@@ -94,7 +94,7 @@ export default function Home() {
             <CountdownTimer />
           </div>
         </section>
-        <section className="min-h-[50vh] grid md:grid-cols-2 items-center gap-12 px-4 md:px-16 py-5 text-neutral-950">
+        <section className="min-h-[50vh] grid md:grid-cols-2 items-center gap-12 px-2 md:px-16 py-5 text-neutral-950">
           <div className="flex flex-col items-start space-y-2 w-full p-8">
             <h2 className="text-lg md:text-xl  text-thunderbird-600 font-bold tracking-tight">
               Event Venue
@@ -136,7 +136,25 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section></section>
+        <section className="w-full items-center px-2 md:px-16 py-5 text-neutral-950">
+          <div className="flex flex-col items-start space-y-2 w-full p-8">
+            <h2 className="text-lg md:text-xl  text-thunderbird-600 font-bold tracking-tight">
+            Upcoming Speakers
+            </h2>
+            <div className="space-y-1">
+              <div className="flex items-center space-x-3">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 ">
+                Visionaries & Innovators
+                </p>
+              </div>
+            </div>
+            <div>
+              <p className="text-neutral-600">
+              Get ready to be inspired by our lineup of extraordinary <Link href="/speakers" className="text-thunderbird-600 hover:underline duration-300 transition-all ease-out">speakers</Link> at TEDx NITH. From groundbreaking scientists to creative artists, each speaker brings a unique perspective that will challenge your thinking and ignite your imagination.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
       <footer>
         <Footer />

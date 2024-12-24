@@ -1,9 +1,12 @@
+"use client";
 import { FaLinkedinIn, FaInstagram, FaFacebookSquare } from "react-icons/fa";
+import clsx from "clsx";
 import { IconType } from "react-icons/lib";
 import { RiTwitterXLine } from "react-icons/ri";
 import { IoLogoTiktok } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface ISocialLinks {
   icon: IconType;
@@ -11,6 +14,8 @@ interface ISocialLinks {
 }
 
 export default function Footer() {
+  const pathName = usePathname();
+
   const socialLinks: ISocialLinks[] = [
     {
       icon: FaFacebookSquare,
@@ -34,8 +39,27 @@ export default function Footer() {
     },
   ];
 
+  const links = [
+    {
+      name: "About",
+      link: "/about",
+    },
+    {
+      name: "Speakers",
+      link: "/speakers",
+    },
+    {
+      name: "Sponsors",
+      link: "/sponsors",
+    },
+    {
+      name: "Register",
+      link: "/register",
+    }
+  ]
+
   return (
-    <div className="bg-neutral-50 border-t px-5 md:px-7 lg:px-10 py-5 flex flex-col md:flex-row md:justify-between md:items-center gap-5">
+    <div className="bg-neutral-50 border-t px-5 md:py-10 md:px-7 lg:px-10 py-5 flex flex-col md:flex-row md:justify-between md:items-center gap-5">
       <div className="space-y-1">
         <div className="w-32 -mx-3">
           <Image
@@ -55,26 +79,20 @@ export default function Footer() {
           Quick Links
         </h2>
         <ul className="space-y-1 md:space-y-0 font-medium md:flex md:items-center md:justify-around md:flex-1">
-          <li className="flex items-center ">
-            <Link href="/about" className="font-light">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/speakers" className="font-light">
-              Speakers
-            </Link>
-          </li>
-          <li>
-            <Link href="/sponsors" className="font-light">
-              Sponsors
-            </Link>
-          </li>
-          <li>
-            <Link href="/register" className="font-light">
-              Register
-            </Link>
-          </li>
+          {links.map((link) => {
+            return (
+              <li key={link.name} className="flex items-center">
+                <Link 
+                  href={link.link} 
+                  className={clsx("font-light", {
+                    "text-thunderbird-500": pathName === link.link
+                  })}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className="md:flex md:justify-end md:items-end">

@@ -17,7 +17,7 @@ export default function CountdownTimer() {
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
 
-      console.log("Time difference:", difference); // Debug log
+      // console.log("Time difference:", difference); // Debug log
 
       if (difference > 0) {
         const newTimeLeft = {
@@ -26,12 +26,10 @@ export default function CountdownTimer() {
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
         };
-        console.log("New time left:", newTimeLeft); // Debug log
+        // console.log("New time left:", newTimeLeft); // Debug log
         setTimeLeft(newTimeLeft);
       } else {
-        // Handle expired timer
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        console.log("Timer expired");
       }
     };
 
@@ -53,7 +51,7 @@ export default function CountdownTimer() {
                 {value.toString().padStart(2, "0")}
               </span>
             </div>
-            <span className="mt-2 bg-thunderbird-600 px-2 py-1 text-sm md:text-base lg:text-xl capitalize text-white  font-medium">
+            <span className="mt-2 bg-thunderbird-600 rounded-full px-3 lg:px-4 py-1 text-sm md:text-base lg:text-lg capitalize text-white  font-medium">
               {unit}
             </span>
           </div>
