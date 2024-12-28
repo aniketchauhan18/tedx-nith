@@ -55,8 +55,8 @@ export default function Footer() {
     {
       name: "Register",
       link: "/register",
-    }
-  ]
+    },
+  ];
 
   return (
     <div className="bg-neutral-50 border-t px-5 md:py-10 md:px-7 lg:px-10 py-5 flex flex-col md:flex-row md:justify-between md:items-center gap-5">
@@ -82,10 +82,10 @@ export default function Footer() {
           {links.map((link) => {
             return (
               <li key={link.name} className="flex items-center">
-                <Link 
-                  href={link.link} 
+                <Link
+                  href={link.link}
                   className={clsx("font-light", {
-                    "text-thunderbird-500": pathName === link.link
+                    "text-thunderbird-500": pathName === link.link,
                   })}
                 >
                   {link.name}

@@ -31,15 +31,33 @@ export default function SponsorsPage() {
           </div>
         </div>
         <div className="px-5 grid md:grid-cols-2 lg:grid-cols-3 my-10 m-5">
-          <div className="h-72 flex border-b md:border-r justify-center items-center"></div>
-          <div className="h-72 flex border-b lg:border-r justify-center items-center"></div>
-          <div className="h-72 flex border-b md:border-r lg:border-r-0 justify-center items-center"></div>
-          <div className="h-72 flex border-b lg:border-r justify-center items-center"></div>
-          <div className="h-72 flex border-b md:border-r justify-center items-center"></div>
-          <div className="h-72 flex border-b justify-center items-center"></div>
-          <div className="h-72 flex border-b md:border-r lg:border-b-0 justify-center items-center"></div>
-          <div className="h-72 flex border-b justify-center lg:border-b-0 items-center"></div>
-          <div className="h-72 flex border-b-0 md:border-r lg:border-r-0 lg:border-l lg:border-b-0 justify-center items-center"></div>
+          <div className="h-72 flex border-b md:border-r justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b lg:border-r justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b md:border-r lg:border-r-0 justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b lg:border-r justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b md:border-r justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b md:border-r lg:border-b-0 justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b justify-center lg:border-b-0 items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
+          <div className="h-72 flex border-b-0 md:border-r lg:border-r-0 lg:border-l lg:border-b-0 justify-center items-center">
+            <div className="rounded-full h-56 w-56 bg-neutral-200/60" />
+          </div>
         </div>
       </section>
       <footer>
