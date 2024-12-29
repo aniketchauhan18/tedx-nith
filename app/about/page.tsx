@@ -100,7 +100,7 @@ export default async function AboutPage() {
         </div>
       </div>
 
-      <section className="w-full flex flex-col items-center justify-center mt-5 p-3">
+      <section className="w-full flex flex-col items-center justify-center mt-5 p-3 px-8 sm:px-7 md:px-10 lg:px-16">
         <div className="w-full max-w-7xl">
           <h3 className="font-extrabold text-3xl">
             About{" "}
@@ -132,7 +132,7 @@ export default async function AboutPage() {
           />
         </div>
       </section>
-      <section className="w-full flex flex-col items-center justify-center mt-5 p-3">
+      <section className="w-full flex flex-col items-center justify-center mt-5 p-3 px-8 sm:px-7 md:px-10 lg:px-16">
         <div className="w-full max-w-7xl">
           <h3 className="font-extrabold text-3xl">
             About{" "}
@@ -230,7 +230,7 @@ export default async function AboutPage() {
           </p>
         </div>
       </section>
-      <section className="py-10 md:py-16 lg:py-20 px-4 bg-white text-black">
+      <section className="py-10 md:py-16 lg:py-20  bg-white text-black px-8 sm:px-7 md:px-10 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <h2
             className={`text-3xl h-[5rem] sm:text-4xl flex justify-center items-center lg:text-5xl font-bold text-center mb-10  ${oswald.className}`}
@@ -247,7 +247,7 @@ export default async function AboutPage() {
                 className="flex flex-col items-center justify-center transition-all duration-300"
                 key={member._id}
               >
-                <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60">
+                <div className="relative w-40 h-40 md:w-52 md:h-52 lg:w-54 lg:h-54">
                   {/* <div 
                     className="absolute w-full h-full bg-neutral-900
                                transform translate-x-3 translate-y-3 rounded-full"

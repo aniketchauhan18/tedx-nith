@@ -40,180 +40,194 @@ export default async function Speakers() {
       <header className="z-10">
         <Navbar />
       </header>
-      <div className={`py-14 min-h-screen`}>
+      <div className={`py-14 min-h-screen px-5 sm:px-8`}>
         <section className="min-h-[20vh] flex justify-center items-center sm:min-h-[25vh] lg:min-h-[35vh]">
           <div className="text-center font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-800">
             MEET OUR{" "}
             <span className="text-thunderbird-500 underline">SPEAKERS</span>
           </div>
         </section>
-        <section className="py-10 px-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16 justify-around lg:gap-16">
-          <div className="space-y-2 flex justify-center flex-col">
-            <div className="flex relative flex-col items-center justify-center h-[30rem] border overflow-hidden">
-              <Image
-                alt=""
-                fill
-                className="object-cover object-center"
-                src="/speaker.png"
-              />
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg md:text-xl">
-                Aravind Srinivas
-              </h4>
-              <h5 className="text-neutral-600 text-base md:text-lg">
-                CEO of Perplexity AI
-              </h5>
-              <p className="text-neutral-400 text-sm md:text-base">
-                Aravind Srinivas is an Indian-American computer scientist and
-                co-founder of Perplexity AI, specializing in conversational
-                search technology. He has a strong background in AI research
-                from leading tech companies.
-              </p>
-            </div>
-          </div>
-          <div className="space-y-2 flex justify-center flex-col">
-            <div className="flex relative flex-col items-center justify-center h-[29rem] border overflow-hidden">
-              <Image
-                alt=""
-                fill
-                className="object-cover object-center"
-                src="/speaker.png"
-              />
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg md:text-xl">
-                Aravind Srinivas
-              </h4>
-              <h5 className="text-neutral-600 text-base md:text-lg">
-                CEO of Perplexity AI
-              </h5>
-              <p className="text-neutral-400 text-sm md:text-base">
-                Aravind Srinivas is an Indian-American computer scientist and
-                co-founder of Perplexity AI, specializing in conversational
-                search technology. He has a strong background in AI research
-                from leading tech companies.
-              </p>
+        <section className="py-10 px-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-16 justify-around lg:gap-16">
+          <div className="space-y-2 flex justify-center items-center flex-col">
+            <div className="w-full max-w-72">
+              <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
+                <Image
+                  alt=""
+                  fill
+                  className="object-cover object-top"
+                  src="/speaker.png"
+                />
+              </div>
+              <div className="pt-2">
+                <h4 className="font-semibold text-lg md:text-xl">
+                  Aravind Srinivas
+                </h4>
+                <h5 className="text-neutral-600 text-base md:text-lg">
+                  CEO of Perplexity AI
+                </h5>
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Aravind Srinivas is an Indian-American computer scientist and
+                  co-founder of Perplexity AI, specializing in conversational
+                  search technology. He has a strong background in AI research
+                  from leading tech companies.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="space-y-2 flex justify-center flex-col">
-            <div className="flex relative flex-col items-center justify-center h-[29rem] border overflow-hidden">
-              <Image
-                alt=""
-                fill
-                className="object-cover object-center"
-                src="/speaker.png"
-              />
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg md:text-xl">
-                Aravind Srinivas
-              </h4>
-              <h5 className="text-neutral-600 text-base md:text-lg">
-                CEO of Perplexity AI
-              </h5>
-              <p className="text-neutral-400 text-sm md:text-base">
-                Aravind Srinivas is an Indian-American computer scientist and
-                co-founder of Perplexity AI, specializing in conversational
-                search technology. He has a strong background in AI research
-                from leading tech companies.
-              </p>
-            </div>
-          </div>
-          <div className="space-y-2 flex justify-center flex-col">
-            <div className="flex relative flex-col items-center justify-center h-[29rem] border overflow-hidden">
-              <Image
-                alt=""
-                fill
-                className="object-cover object-center"
-                src="/speaker.png"
-              />
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg md:text-xl">
-                Aravind Srinivas
-              </h4>
-              <h5 className="text-neutral-600 text-base md:text-lg">
-                CEO of Perplexity AI
-              </h5>
-              <p className="text-neutral-400 text-sm md:text-base">
-                Aravind Srinivas is an Indian-American computer scientist and
-                co-founder of Perplexity AI, specializing in conversational
-                search technology. He has a strong background in AI research
-                from leading tech companies.
-              </p>
+          <div className="space-y-2 flex justify-center items-center flex-col">
+            <div className="w-full max-w-72">
+              <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
+                <Image
+                  alt=""
+                  fill
+                  className="object-cover object-top"
+                  src="/speaker.png"
+                />
+              </div>
+              <div className="pt-2">
+                <h4 className="font-semibold text-lg md:text-xl">
+                  Aravind Srinivas
+                </h4>
+                <h5 className="text-neutral-600 text-base md:text-lg">
+                  CEO of Perplexity AI
+                </h5>
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Aravind Srinivas is an Indian-American computer scientist and
+                  co-founder of Perplexity AI, specializing in conversational
+                  search technology. He has a strong background in AI research
+                  from leading tech companies.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="space-y-2 flex justify-center flex-col">
-            <div className="flex relative flex-col items-center justify-center h-[29rem] border overflow-hidden">
-              <Image
-                alt=""
-                fill
-                className="object-cover object-center"
-                src="/speaker.png"
-              />
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg md:text-xl">
-                Aravind Srinivas
-              </h4>
-              <h5 className="text-neutral-600 text-base md:text-lg">
-                CEO of Perplexity AI
-              </h5>
-              <p className="text-neutral-400 text-sm md:text-base">
-                Aravind Srinivas is an Indian-American computer scientist and
-                co-founder of Perplexity AI, specializing in conversational
-                search technology. He has a strong background in AI research
-                from leading tech companies.
-              </p>
-            </div>
-          </div>
-          <div className="space-y-2 flex justify-center flex-col">
-            <div className="flex relative flex-col items-center justify-center h-[29rem] border overflow-hidden">
-              <Image
-                alt=""
-                fill
-                className="object-cover object-center"
-                src="/speaker.png"
-              />
-            </div>
-            <div>
-              <h4 className="font-semibold text-lg md:text-xl">
-                Aravind Srinivas
-              </h4>
-              <h5 className="text-neutral-600 text-base md:text-lg">
-                CEO of Perplexity AI
-              </h5>
-              <p className="text-neutral-400 text-sm md:text-base">
-                Aravind Srinivas is an Indian-American computer scientist and
-                co-founder of Perplexity AI, specializing in conversational
-                search technology. He has a strong background in AI research
-                from leading tech companies.
-              </p>
+          <div className="space-y-2 flex justify-center items-center flex-col">
+            <div className="w-full max-w-72">
+              <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
+                <Image
+                  alt=""
+                  fill
+                  className="object-cover object-top"
+                  src="/speaker.png"
+                />
+              </div>
+              <div className="pt-2">
+                <h4 className="font-semibold text-lg md:text-xl">
+                  Aravind Srinivas
+                </h4>
+                <h5 className="text-neutral-600 text-base md:text-lg">
+                  CEO of Perplexity AI
+                </h5>
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Aravind Srinivas is an Indian-American computer scientist and
+                  co-founder of Perplexity AI, specializing in conversational
+                  search technology. He has a strong background in AI research
+                  from leading tech companies.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="space-y-2 flex justify-center flex-col">
-            <div className="flex relative flex-col items-center justify-center h-[29rem] border overflow-hidden">
-              <Image
-                alt=""
-                fill
-                className="object-cover object-center"
-                src="/speaker.png"
-              />
+          <div className="space-y-2 flex justify-center items-center flex-col">
+            <div className="w-full max-w-72">
+              <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
+                <Image
+                  alt=""
+                  fill
+                  className="object-cover object-top"
+                  src="/speaker.png"
+                />
+              </div>
+              <div className="pt-2">
+                <h4 className="font-semibold text-lg md:text-xl">
+                  Aravind Srinivas
+                </h4>
+                <h5 className="text-neutral-600 text-base md:text-lg">
+                  CEO of Perplexity AI
+                </h5>
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Aravind Srinivas is an Indian-American computer scientist and
+                  co-founder of Perplexity AI, specializing in conversational
+                  search technology. He has a strong background in AI research
+                  from leading tech companies.
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-semibold text-lg md:text-xl">
-                Aravind Srinivas
-              </h4>
-              <h5 className="text-neutral-600 text-base md:text-lg">
-                CEO of Perplexity AI
-              </h5>
-              <p className="text-neutral-400 text-sm md:text-base">
-                Aravind Srinivas is an Indian-American computer scientist and
-                co-founder of Perplexity AI, specializing in conversational
-                search technology. He has a strong background in AI research
-                from leading tech companies.
-              </p>
+          </div>
+          <div className="space-y-2 flex justify-center items-center flex-col">
+            <div className="w-full max-w-72">
+              <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
+                <Image
+                  alt=""
+                  fill
+                  className="object-cover object-top"
+                  src="/speaker.png"
+                />
+              </div>
+              <div className="pt-2">
+                <h4 className="font-semibold text-lg md:text-xl">
+                  Aravind Srinivas
+                </h4>
+                <h5 className="text-neutral-600 text-base md:text-lg">
+                  CEO of Perplexity AI
+                </h5>
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Aravind Srinivas is an Indian-American computer scientist and
+                  co-founder of Perplexity AI, specializing in conversational
+                  search technology. He has a strong background in AI research
+                  from leading tech companies.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-2 flex justify-center items-center flex-col">
+            <div className="w-full max-w-72">
+              <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
+                <Image
+                  alt=""
+                  fill
+                  className="object-cover object-top"
+                  src="/speaker.png"
+                />
+              </div>
+              <div className="pt-2">
+                <h4 className="font-semibold text-lg md:text-xl">
+                  Aravind Srinivas
+                </h4>
+                <h5 className="text-neutral-600 text-base md:text-lg">
+                  CEO of Perplexity AI
+                </h5>
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Aravind Srinivas is an Indian-American computer scientist and
+                  co-founder of Perplexity AI, specializing in conversational
+                  search technology. He has a strong background in AI research
+                  from leading tech companies.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-2 flex justify-center items-center flex-col">
+            <div className="w-full max-w-72">
+              <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
+                <Image
+                  alt=""
+                  fill
+                  className="object-cover object-top"
+                  src="/speaker.png"
+                />
+              </div>
+              <div className="pt-2">
+                <h4 className="font-semibold text-lg md:text-xl">
+                  Aravind Srinivas
+                </h4>
+                <h5 className="text-neutral-600 text-base md:text-lg">
+                  CEO of Perplexity AI
+                </h5>
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Aravind Srinivas is an Indian-American computer scientist and
+                  co-founder of Perplexity AI, specializing in conversational
+                  search technology. He has a strong background in AI research
+                  from leading tech companies.
+                </p>
+              </div>
             </div>
           </div>
         </section>
