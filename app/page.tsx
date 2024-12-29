@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </section>
         <section className="mx-auto py-16">
-          <div className="max-w-7xl mx-auto space-y-6  px-8 sm:px-12 md:px-16">
+          <div className="max-w-7xl space-y-6  px-8 sm:px-12 md:px-16">
             <h2 className="text-3xl font-bold mb-6 ml-5">
               <Typewriter
                 words={["What is TEDx?"]}
