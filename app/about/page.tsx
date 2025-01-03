@@ -76,13 +76,13 @@ export default async function AboutPage() {
       <header>
         <Navbar />
       </header>
-      <div className="relative h-[40vh] sm:h-[70vh] bg-black">
+      <div className="relative h-[40vh] sm:h-[75vh] bg-black">
         <Image
           src="/about/temp-tedx-team.jpg"
           alt="TEDx Banner"
           height={600}
           width={1200}
-          className="object-cover opacity-70 h-full"
+          className="object-cover opacity-70 h-full w-full"
         />
         <div className="absolute bottom-3 left-1 sm:bottom-5 sm:left-5 flex items-center justify-center w-full sm:w-full sm:justify-start">
           <div className="flex gap-2 items-center text-3xl md:text-4xl font-bold text-white">
