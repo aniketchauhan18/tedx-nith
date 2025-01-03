@@ -88,7 +88,7 @@ export default function Home() {
         <section className="flex flex-col bg-white justify-center items-center h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-[100vh]">
           <div className="text-5xl sm:text-5xl md:text-7xl lg:text-9xl text-center font-bold">
             <h1 className="tracking-widest">INNOVISION</h1>
-            <p className="text-thunderbird-600">ज्ञानं परमं भूषणम्</p>
+            <p className="text-thunderbird-600">ज्ञानं परमं बलम्</p>
           </div>
           <div className="py-10">
             <CountdownTimer />

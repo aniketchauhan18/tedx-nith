@@ -75,9 +75,7 @@ export default function Footer() {
         </p>
       </div>
       <div className="md:flex flex-1">
-        <h2 className="md:hidden text-thunderbird-500 font-bold">
-          Quick Links
-        </h2>
+        <h2 className="md:hidden text-[#EB0028] font-bold">Quick Links</h2>
         <ul className="space-y-1 md:space-y-0 font-medium md:flex md:items-center md:justify-around md:flex-1">
           {links.map((link) => {
             return (
@@ -85,7 +83,7 @@ export default function Footer() {
                 <Link
                   href={link.link}
                   className={clsx("font-light", {
-                    "text-thunderbird-500": pathName === link.link,
+                    "text-[#EB0028]": pathName === link.link,
                   })}
                 >
                   {link.name}

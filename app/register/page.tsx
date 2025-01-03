@@ -13,7 +13,7 @@ export default function EventRegisterPage() {
           className="w-96"
         />
       </div>
-      <div className="w-full flex-1 flex justify-center mt-32 lg:mt-0 lg:items-center lg:h-screen max-w-sm p-3">
+      <div className="w-full flex-1 flex justify-center mt-32 lg:mt-0 min-h-[70vh] lg:items-center lg:h-screen max-w-sm p-3">
         <RegisterForm />
       </div>
     </main>

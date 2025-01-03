@@ -5,7 +5,7 @@ import { MEMBERS_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
-import { Oswald } from "next/font/google";
+// import { Oswald } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "About",
@@ -57,10 +57,10 @@ interface ICoreTeamMember {
 //   weight: ["400"]
 // })
 
-const oswald = Oswald({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-});
+// const oswald = Oswald({
+//   subsets: ["latin", "latin-ext"],
+//   weight: ["400", "500", "600", "700"],
+// });
 
 export default async function AboutPage() {
   const data = await sanityFetch({
@@ -80,22 +80,13 @@ export default async function AboutPage() {
         <Image
           src="/about/temp-tedx-team.jpg"
           alt="TEDx Banner"
-          fill
-          className="object-cover opacity-70"
+          height={600}
+          width={1200}
+          className="object-cover opacity-70 h-full"
         />
-        <div className="absolute bottom-3 left-2 sm:bottom-5 sm:left-5 flex items-center justify-center w-full sm:w-full sm:justify-start">
+        <div className="absolute bottom-3 left-1 sm:bottom-5 sm:left-5 flex items-center justify-center w-full sm:w-full sm:justify-start">
           <div className="flex gap-2 items-center text-3xl md:text-4xl font-bold text-white">
-            <h3>Meet</h3>
-            <div className="w-[11rem] md:w-[13.5rem] -mx-3 md:-mx-4">
-              <Image
-                src="/logo-white.png"
-                className="w-full"
-                alt=""
-                height={60}
-                width={1200}
-              />
-            </div>
-            <h3>Team</h3>
+            <h3>Meet the TEDxNIT Team</h3>
           </div>
         </div>
       </div>
@@ -103,8 +94,7 @@ export default async function AboutPage() {
       <section className="w-full flex flex-col items-center justify-center mt-5 p-3 px-8 sm:px-7 md:px-10 lg:px-16">
         <div className="w-full max-w-7xl">
           <h3 className="font-extrabold text-3xl">
-            About{" "}
-            <span className="text-thunderbird-600/80 font-extrabold">TEDx</span>
+            About <span className="text-[#EB0028] font-extrabold">TEDx</span>
           </h3>
           <div className="font-medium text-lg text-neutral-600">
             x = independently organized event
@@ -135,8 +125,7 @@ export default async function AboutPage() {
       <section className="w-full flex flex-col items-center justify-center mt-5 p-3 px-8 sm:px-7 md:px-10 lg:px-16">
         <div className="w-full max-w-7xl">
           <h3 className="font-extrabold text-3xl">
-            About{" "}
-            <span className="text-thunderbird-600/80 font-extrabold">TED</span>
+            About <span className="text-[#EB0028] font-extrabold">TED</span>
           </h3>
         </div>
         <div className="my-5 w-full max-w-7xl">
@@ -233,10 +222,10 @@ export default async function AboutPage() {
       <section className="py-10 md:py-16 lg:py-20  bg-white text-black px-8 sm:px-7 md:px-10 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <h2
-            className={`text-3xl h-[5rem] sm:text-4xl flex justify-center items-center lg:text-5xl font-bold text-center mb-10  ${oswald.className}`}
+            className={`text-3xl h-[5rem] sm:text-4xl flex justify-center items-center lg:text-5xl font-bold text-center mb-10 `}
           >
             Our Core{" "}
-            <span className="text-red-700 flex justify-center items-center lg:text-5xl font-bold text-center px-3">
+            <span className="text-[#EB0028] flex justify-center items-center lg:text-5xl font-bold text-center px-3">
               Team
             </span>
           </h2>
@@ -255,15 +244,15 @@ export default async function AboutPage() {
                   <Image
                     src={member.memberImageUrl}
                     alt={member.name}
-                    layout="fill"
-                    objectFit="cover"
+                    height={400}
+                    width={800}
                     className="relative z-10 rounded-full ring-4 ring-red-500 shadow-lg shadow-red-400 "
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold mt-3 text-neutral-900">
                   {member.name}
                 </h3>
-                <p className="sm:text-lg text-neutral-900 italic text-sm font-light">
+                <p className="sm:text-lg text-neutral-900 text-xs font-light">
                   {member.role}
                 </p>
               </div>

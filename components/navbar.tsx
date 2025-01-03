@@ -98,7 +98,7 @@ export default function Navbar() {
                     "p-4 text-base font-medium border-b  last:border-none border-border/40 block transition-colors duration-150 ease-in-out",
                     {
                       "text-white": pathname !== link.link,
-                      "text-thunderbird-500": pathname === link.link,
+                      "text-[#EB0028]": pathname === link.link,
                     },
                   )}
                 >

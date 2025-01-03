@@ -43,8 +43,7 @@ export default async function Speakers() {
       <div className={`py-14 min-h-screen px-5 sm:px-8`}>
         <section className="min-h-[20vh] flex justify-center items-center sm:min-h-[25vh] lg:min-h-[35vh]">
           <div className="text-center font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-800">
-            MEET OUR{" "}
-            <span className="text-thunderbird-500 underline">SPEAKERS</span>
+            MEET OUR <span className="text-[#EB0028] underline">SPEAKERS</span>
           </div>
         </section>
         <section className="py-10 px-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-16 justify-around lg:gap-16">
@@ -209,7 +208,8 @@ export default async function Speakers() {
               <div className="flex relative flex-col items-center justify-center  h-[16rem] sm:h-[17rem] border overflow-hidden">
                 <Image
                   alt=""
-                  fill
+                  height={800}
+                  width={600}
                   className="object-cover object-top"
                   src="/speaker.png"
                 />
