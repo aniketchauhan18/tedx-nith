@@ -1,7 +1,13 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import type { Metadata } from "next";
 
-export default function SponsorsPage() {
+export const metadata: Metadata = {
+  title: "Sponsors",
+  description: "We are grateful to our sponsors who help make the event possible. Their support enables us to bring innovative ideas and inspiring stories to our community."
+}
+
+export default async function SponsorsPage() {
   return (
     <div>
       <header>

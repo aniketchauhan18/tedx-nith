@@ -11,14 +11,32 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tedx-nith.vercel.app/"),
   title: {
-    template: "%s | TEDxNITH",
-    default: "TEDxNITH",
+    template: "%s",
+    default: "Home",
   },
   description:
-    "TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and spreading ideas that spark conversation, deepen understanding and drive meaningful change. ",
+    "TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and spreading ideas that spark conversation, deepen understanding and drive meaningful change.",
   keywords:
-    "TED,  TEDxNITH, TEDx, nit, hamirpur, nith, nit hamirpur, nimbus, speaker, tedx event",
+    "TED, TEDxNITH, TEDx, nit, hamirpur, nith, nit hamirpur, nimbus, speaker, tedx event",
+  openGraph: {
+    title: "TEDxNIT Hamirpur",
+    description:
+      "TEDxNIT Hamirpur - Talks at venue and city Auditorium, NIT Hamirpur, Hamirpur.",
+    url: "https://tedx-nith.vercel.app/", // todo: change this url in future
+    siteName: "TEDxNIT Hamirpur",
+    images: [
+      {
+        url: "/logo-black.png",
+        width: 800,
+        height: 600,
+        alt: "TEDxNIT Hamirpur",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
