@@ -86,7 +86,7 @@ export default async function AboutPage() {
         />
         <div className="absolute bottom-3 left-1 sm:bottom-5 sm:left-5 flex items-center justify-center w-full sm:w-full sm:justify-start">
           <div className="flex gap-2 items-center text-3xl md:text-4xl font-bold text-white">
-            <h3>Meet the TEDxNIT Team</h3>
+            <h3>Meet our  Team</h3>
           </div>
         </div>
       </div>
