@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { CircleCheck, CircleX } from "lucide-react";
 import { SanityLive } from "@/sanity/lib/live";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = Geist({
   subsets: ["latin", "latin-ext"],
@@ -58,6 +59,7 @@ export default function RootLayout({
         />
         <SanityLive />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

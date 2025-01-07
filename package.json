@@ -19,6 +19,7 @@
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
     "@tanstack/react-form": "^0.40.3",
+    "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
